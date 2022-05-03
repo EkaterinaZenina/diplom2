@@ -91,6 +91,16 @@ public class AllTests {
         data.clickContinueButton();
         data.getSuccessNotification();
     }
+    @Test
+    public void shouldInvalid2CVC() {
+        data.getDeclinedCard();
+        data.getMonth(0);
+        data.getYear(0);
+        data.getValidName();
+        cvcForm.setValue("12");
+        data.clickContinueButton();
+        data.getSuccessNotification();
+    }
         @Test
         public void ShouldSpaceInCVC() {
             data.getApprovedCard();
