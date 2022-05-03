@@ -91,4 +91,25 @@ public class AllTests {
         data.clickContinueButton();
         data.getSuccessNotification();
     }
-}
+        @Test
+        public void ShouldSpaceInCVC() {
+            data.getApprovedCard();
+            data.getMonth(0);
+            data.getYear(1);
+            data.getValidName();
+            cvcForm.setValue(" ");
+            data.clickContinueButton();
+            data.getCVCErrorNotification();
+        }
+
+        @Test
+        public void shouldEmptyForm() {
+            data.clickContinueButton();
+            data.getCardErrorNotification();
+            data.getMonthFormatErrorNotification();
+            data.getYearFormatErrorNotification();
+            data.getNameErrorNotification();
+            data.getCVCErrorNotification();
+        }
+    }
+

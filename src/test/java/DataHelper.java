@@ -28,6 +28,10 @@ public class DataHelper {
     public DataHelper() {
     }
 
+    public void getValidName() {
+        nameField.setValue("Name Name");
+    }
+
     public void getApprovedCard(){
         card.setValue("4444 4444 4444 4441");
     }
@@ -44,10 +48,6 @@ public class DataHelper {
     public void getYear(int years) {
         String year = LocalDate.now().plusYears(years).format(DateTimeFormatter.ofPattern("yy"));
         yearField.setValue(year);
-    }
-
-    public void getValidName() {
-        nameField.setValue("Name Name");
     }
 
     public void getValidCVC() {
@@ -77,7 +77,6 @@ public class DataHelper {
     public void getNameErrorNotification() {
         nameError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible);
     }
-
     public void getCardErrorNotification() {
         cardError.shouldHave(text("Неверный формат")).shouldBe(visible);
     }
@@ -94,12 +93,6 @@ public class DataHelper {
         cvcError.shouldHave(text("Неверный формат")).shouldBe(visible);
     }
 
-    public void getMonthErrorNotification() {
-        monthError.shouldHave(text("Неверно указан срок действия карты")).shouldBe(visible);
-    }
 
-    public void getYearErrorNotification() {
-        yearError.shouldHave(text("Неверно указан срок действия карты")).shouldBe(visible);
-    }
 }
 
